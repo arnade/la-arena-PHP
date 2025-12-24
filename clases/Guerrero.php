@@ -2,7 +2,7 @@
 
 class Guerrero extends Personaje {
 
-    private $espada;
+    private string $espada;
 
     function __construct ($nombre, $fuerza, $espada) {
         $this -> espada = $espada;
