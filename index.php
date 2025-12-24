@@ -12,4 +12,17 @@
 
     ];
 
+    function mostrarParticipantes ($array) {
+
+        $datosPersonajes = "";
+
+        foreach ($array as $personaje) {
+
+            $datosPersonajes .= $personaje -> getNombre() . " es un " . get_class($personaje) . " con " . $personaje -> getVida() . " puntos de vida <br>";
+
+        }
+
+        return $datosPersonajes;
+
+    }
     
