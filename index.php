@@ -39,15 +39,21 @@
 
         for ($i = 0; $i <= 2; $i++) {
 
-            echo "Ronda $i <br>";
+            echo "<br> Ronda " . $i + 1 . "<br>";
 
-            echo $array[$personajeAleatorio1] -> getNombre() . " pega a " . $array[$personajeAleatorio2] -> getNombre() . "<br>";
-            $array[$personajeAleatorio1] -> atacar();
-            echo "A " . $array[$personajeAleatorio2] -> getNombre() . "le quedan " . $array[$personajeAleatorio2] -> getVida() . " puntos de vida <br><br>";
+            echo $array[$personajeAleatorio1] -> getNombre() . " pega <br>";
+            $array[$personajeAleatorio1] -> atacar($array[$personajeAleatorio2]);
+            echo "A " . $array[$personajeAleatorio2] -> getNombre() . " le quedan " . $array[$personajeAleatorio2] -> getVida() . " puntos de vida <br><br>";
 
-            echo $array[$personajeAleatorio2] -> getNombre() . " pega a " . $array[$personajeAleatorio1] -> getNombre() . "<br>";
-            $array[$personajeAleatorio2] -> atacar();
-            echo "A " . $array[$personajeAleatorio1] -> getNombre() . "le quedan " . $array[$personajeAleatorio1] -> getVida() . " puntos de vida <br><br>";
+            if ($array[$personajeAleatorio1] -> getVida() == 0) {
+                $i = 3;
+            } else if ($array[$personajeAleatorio2] -> getVida() == 0) {
+                $i = 3;
+            }
+
+            echo $array[$personajeAleatorio2] -> getNombre() . " pega <br>";
+            $array[$personajeAleatorio2] -> atacar($array[$personajeAleatorio1]);
+            echo "A " . $array[$personajeAleatorio1] -> getNombre() . " le quedan " . $array[$personajeAleatorio1] -> getVida() . " puntos de vida <br><br>";
 
             if ($array[$personajeAleatorio1] -> getVida() == 0) {
                 $i = 3;
@@ -67,6 +73,6 @@
 
     }
 
-    echo mostrarParticipantes ($participantes);
-    combatir ($participantes);
+    echo mostrarParticipantes ($combatientes);
+    combatir ($combatientes);
     

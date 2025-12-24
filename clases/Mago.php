@@ -8,16 +8,16 @@
             parent::__construct($nombre, $fuerza);
         }
         
-        public function atacar() {
+        public function atacar(Personaje $objetivo) {
 
             if ( $this -> mana > 0 ) {
 
-                parent::atacar() * $this -> mana;
+                parent::atacar($objetivo) * $this -> mana;
                 $this -> mana -= 1;
 
             } else {
 
-                parent::atacar();
+                parent::atacar($objetivo);
 
             }
 

@@ -11,14 +11,14 @@
             
         }
 
-        public function atacar() {
+        public function atacar(Personaje $objetivo) {
 
             $probabilidad = rand(0,1);
 
             if ($probabilidad = 1) {
                 
-                parent::atacar();
-                parent::atacar();
+                parent::atacar($objetivo);
+                parent::atacar($objetivo);
             
             } else {
 
